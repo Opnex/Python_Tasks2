@@ -167,58 +167,141 @@
 # - Attributes store the data
 # - Methods use and modify that data
 
-class BankAccount:
-    def __init__(self, owner, bank_name, balance=0):
-        # ATTRIBUTES - What the account HAS
-        self.owner = owner
-        self.bank_name = bank_name
-        self.balance = balance
-        self.account_number = self.generate_account_number()
+# class BankAccount:
+#     def __init__(self, owner, bank_name, balance=0):
+#         # ATTRIBUTES - What the account HAS
+#         self.owner = owner
+#         self.bank_name = bank_name
+#         self.balance = balance
+#         self.account_number = self.generate_account_number()
 
-    # METHODS - What the account can DO
-    def deposit(self, amount):
-     """Add money to the account"""
-     if amount > 0:
-        self.balance += amount # Method changes attribute
-        return f"#{amount:,} deposited to {self.owner}'s {self.bank_name} account. New balance: #{self.balance:,}"
-     return "Invalid deposit amount"
+#     # METHODS - What the account can DO
+#     def deposit(self, amount):
+#      """Add money to the account"""
+#      if amount > 0:
+#         self.balance += amount # Method changes attribute
+#         return f"#{amount:,} deposited to {self.owner}'s {self.bank_name} account. New balance: #{self.balance:,}"
+#      return "Invalid deposit amount"
     
 
-    def withdraw(self, amount):
-        """Remove money from the account"""
-        if amount > 0 and amount <= self.balance:
-           self.balance -= amount # Method changes attribute
-           return f"#{amount:,} withdraw from {self.owner}'s account. New balance: #{self.balance}"
-        return "Insufficient funds or invalid amount"
+#     def withdraw(self, amount):
+#         """Remove money from the account"""
+#         if amount > 0 and amount <= self.balance:
+#            self.balance -= amount # Method changes attribute
+#            return f"#{amount:,} withdraw from {self.owner}'s account. New balance: #{self.balance}"
+#         return "Insufficient funds or invalid amount"
     
 
-    def transfer(self, amount, recipient):
-       """Remove money from the account"""
-       if amount > 0 and amount <= self.balance:
-          self.balance -= amount
-          return f"#{amount:,} transfered from {self.owner} to {recipient}. Remaining balance: #{self.balance:,}"
-       return "Transfer failed: Insufficient funds"
+#     def transfer(self, amount, recipient):
+#        """Remove money from the account"""
+#        if amount > 0 and amount <= self.balance:
+#           self.balance -= amount
+#           return f"#{amount:,} transfered from {self.owner} to {recipient}. Remaining balance: #{self.balance:,}"
+#        return "Transfer failed: Insufficient funds"
     
 
-    def check_balance(self):
-       """Check current balance"""
-       return f"{self.owner}'s {self.bank_name} account balance: #{self.balance}"
+#     def check_balance(self):
+#        """Check current balance"""
+#        return f"{self.owner}'s {self.bank_name} account balance: #{self.balance}"
     
 
-    def generate_account_number(self):
-       """Generate a unique account number"""
-       import random
-       return f"01{random.randint(10000000, 99999999)}"
+#     def generate_account_number(self):
+#        """Generate a unique account number"""
+#        import random
+#        return f"01{random.randint(10000000, 99999999)}"
     
 
-    # Creating and using the account
-Opnex_account = BankAccount("Thomas Opeyemi", "AXT Bank", 50000)
+#     # Creating and using the account
+# Opnex_account = BankAccount("Thomas Opeyemi", "AXT Bank", 50000)
 
 
-# Attributes (characteristics)
-print(Opnex_account.deposit(25000))
-print(Opnex_account.withdraw(10000))
-print(Opnex_account.transfer(15000, "Oladunjoye Ayomidimeji"))
-print(Opnex_account.check_balance())
+# # Attributes (characteristics)
+# print(Opnex_account.deposit(25000))
+# print(Opnex_account.withdraw(10000))
+# print(Opnex_account.transfer(15000, "Oladunjoye Ayomidimeji"))
+# print(Opnex_account.check_balance())
+
+
+
+
+# class Naijaphone:
+#    def __init__(self, brand, model, network_provider):
+#       self.brand = brand
+#       self.mode = model
+#       self.netwoork_provider = network_provider
+#       self.airtime_balance = 0
+#       self.data_balance = 0
+#       self.is_on = False
+
+
+#    def power_on(self):
+#       self.is_on = True
+#       return f"{self.brand} phone is now on. Nework: {self.netwoork_provider}"
+   
+#    def buy_airtime(self, amount):
+#       self.airtime_balance += amount
+#       return f"#{amount} airtime purchase. Balance: #{self.airtime_balance}"
+   
+#    def make_call(self, number):
+#       if self.is_on and self.airtime_balance > 0:
+#          self.airtime_balance -= 10
+#          return f"Calling {number}... Remaining airtime: #{self.airtime_balance}"
+#       return "Cannot make call. Check phone power and airtime balance"
+    
+#    def send_sms(self, message, number):
+#       if self. airtime_balance >= 4:
+#          self.airtime_balance -= 4
+#          return f"SMS sent to {number}: '{message}'. Remaining airtime: #{self.airtime_balance}"
+#       return  "Insufficient airtime to send SMS"
+
+
+# Opnex_gadget = Naijaphone("Android", "Samsung", "MTN")
+
+# print(Opnex_gadget.power_on())
+# print(Opnex_gadget.buy_airtime(500))
+# print(Opnex_gadget.make_call(10))
+# print(Opnex_gadget.send_sms(4, 8188065483))
+
+
+
+# class BRTBus:
+#     def __init__(self, route, bus_number):
         
+#         self.route = route
+#         self.bus_number = bus_number
+#         self.current_stop = "Ikorodu"
+#         self.passenger_count = 0
+#         self.fare = 300
+   
+
+#     def announce_stop(self):
+#        return f"Next stop: {self.current_stop}. Fare is #{self.fare}" 
     
+#     def board_passengers(self, count):
+#         self.passenger_count += count
+#         return f"{count} passengers boarded. Total: {self.passenger_count}"
+    
+# Opnex_transportation = BRTBus("Oshodi", "Lag-555-AE")
+
+# print(Opnex_transportation.announce_stop())
+# print(Opnex_transportation.board_passengers(5))
+
+
+class MarketTradeer:
+    def __init__(self, name, market_name, goods):
+        self.name = name
+        self.market_name = market_name
+        self.goods = goods
+        self.daily_sales = 0
+
+    def advertise_goods(self):
+        return f"{self.name} at {self.market_name}: fresh {', '.join(self.goods)} availabale"
+    
+    def make_sale(self, amount):
+        self.daily_sales += amount
+        return f"Sale made! Today's total: #{self.daily_sales:,}"
+    
+Opnex_store = MarketTradeer("Mr Opnex", "World Market", "Motor")
+
+print(Opnex_store.advertise_goods())
+print(Opnex_store.make_sale(100000000))
